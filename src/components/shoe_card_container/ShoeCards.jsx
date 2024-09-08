@@ -1,37 +1,7 @@
-// import React from 'react'
+import React, {useState} from 'react'
 import ShoeCard from './ShoeCard'
-// import AliceCarousel from 'react-alice-carousel';
-// import 'react-alice-carousel/lib/alice-carousel.css';
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-
-import { data } from '../data/image';
-
-
-// const responsive = {
-//     0: { items: 1 },
-//     568: { items: 2 },
-//     1024: { items: 3 },
-// };
-
-// const items = data.map((item) => (<ShoeCard urll={item.url} />));
-
-// const ShoeCards = () => {
-//     return (
-//         <AliceCarousel
-//             mouseTracking
-//             disableDotsControls
-//             items={items}
-//             responsive={responsive}
-//             controlsStrategy="alternate"
-//         />
-//     )
-// }
-
-// export default ShoeCards
-
-
-import React, { useState } from "react";
-
+import {IoIosArrowForward, IoIosArrowBack} from "react-icons/io";
+import {data} from '../data/image';
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -42,9 +12,9 @@ const ShoeCards = () => {
     let carouselRef = null;
 
     const responsive = {
-        0: { items: 1 },
-        720: { items: 2 },
-        1024: { items: 4 },
+        0: {items: 1},
+        720: {items: 2},
+        1024: {items: 4},
     };
 
     const slidePrev = () => {
@@ -67,11 +37,11 @@ const ShoeCards = () => {
         }
     };
 
-    const syncActiveIndex = ({ item }) => {
+    const syncActiveIndex = ({item}) => {
         setActiveIndex(item);
     }
 
-    const items = data.map((item) => (<ShoeCard urll={item.url} />));
+    const items = data.map((item) => (<ShoeCard urll={item.url}/>));
 
     return (
         <div className=" ">
@@ -86,22 +56,22 @@ const ShoeCards = () => {
                     disableDotsControls
                     activeIndex={activeIndex}
                     onSlideChanged={syncActiveIndex}
-                // controlsStrategy="alternate"
+                    // controlsStrategy="alternate"
                 />
                 {activeIndex !== items.length - 4 && <button
 
-                    className="z-50 absolute  bg-blue-900 px-1 py-3 rounded-md  right-5 top-[50%]"
+                    className="z-50 absolute  bg-[#fff] px-1 py-3 rounded-md  right-5 top-[50%]"
                     onClick={slideNext}
                 >
-                    <IoIosArrowForward className='text-white text-2xl' />
+                    <IoIosArrowForward className='text-black text-2xl'/>
                 </button>}
 
 
                 {activeIndex !== 0 && <button
-                    className="z-50 bg-blue-900 px-1 py-3 rounded-md absolute left-5 top-[50%]"
+                    className="z-50 bg-[#fff] px-1 py-3 rounded-md absolute left-5 top-[50%]"
                     onClick={slidePrev}
                 >
-                    <IoIosArrowBack className='text-white text-2xl' />
+                    <IoIosArrowBack className='text-black text-2xl'/>
 
                 </button>}
             </div>

@@ -3,7 +3,7 @@ import Hero from '../hero/Hero';
 import CategoryCard from '../category_card/CategoryCard';
 import bannerimg from '../../assets/bannerimg.png'
 import ShoeCards from '../shoe_card_container/ShoeCards';
-import { FaArrowRightLong } from "react-icons/fa6";
+import {FaArrowRightLong} from "react-icons/fa6";
 
 
 const Home = () => {
@@ -11,54 +11,45 @@ const Home = () => {
         <div className='w-full '>
             {/* hero model  */}
             <div className='h-screen mt-[5rem]'>
-                <Hero />
+                <Hero/>
             </div>
             {/* cards */}
-            <div className='sm:mt-28 md:mt-10'>
-                <CategoryCard />
+            <div className='mt-10 mx-auto'>
+                <CategoryCard/>
             </div>
 
-            {/* banner */}
-            {/* <div className='mt-[5rem] relative'>
-                <img src={banner} alt="" />
-
-                <div className='absolute right-10 top-[40%]'>
-                    <div className='text-white uppercase text-5xl font-semibold font-sans mb-5'>New Styles in town</div>
-                    <div className='text-black space-x-5 font-semibold flex justify-center '>
-                        <button className='uppercase p-3 border bg-white '>
-                            Shop men
-                        </button>
-
-                        <button className='uppercase p-3 border bg-white'>
-                            shop women
-                        </button>
-
-                        <button className='uppercase p-3 border bg-white'>
-                            shop kids
-                        </button>
-                    </div>
-                </div>
-            </div> */}
-
             <section className='space-y-7 '>
-                <h1 className='text-black text-5xl mt-[7rem] font-sans font-semibold pl-7'>Trending This Week</h1>
-                <ShoeCards />
+                <h1 className='text-black text-center text-3xl sm:text-5xl mt-[7rem] font-sans font-semibold md:text-start md:px-7'>Trending This Week</h1>
+                <ShoeCards/>
             </section>
 
-            <div className='mt-10 bg-gradient-to-t from-[#3c291f]  to-[#0b0b0b] sm:h-[70vh] grid  sm:grid-cols-2'>
+            {/*banner*/}
+            <div className='mt-10 bg-gradient-to-t from-[#3c291f]  to-[#0b0b0b] sm:h-auto py-8 sm:py-16 grid lg:grid-cols-2'>
                 <div className='relative flex justify-center items-center'>
-                    <div className='mt-5 sm:mt-0 w-[70%] sm:w-[60%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-700 to-red-400 rounded-full'>
-                        <img src={bannerimg} alt="" />
+                    <div
+                        className='mt-5 sm:mt-0 w-[50%] sm:w-[50%] md:w-[50%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-700 to-red-400 rounded-full'>
+                        <img src={bannerimg} alt=""/>
                     </div>
-                    <div className='flex flex-col w-[120px]  sm:w-[120px] bg-[#4d3123] p-1 rounded-xl absolute top-4 right-4 sm:top-16 sm:right-24'>
-                        <span className='text-yellow-400 text-xs font-sans'>Get upto 30% Off</span>
-                        <span className='text-white text-[9px]'>You can get value for money product</span>
-                    </div>
+                    {/*<div className='flex flex-col w-[120px]  sm:w-[120px] bg-[#4d3123] p-1 rounded-xl absolute top-4 right-4 sm:top-16 sm:right-24'>*/}
+                    {/*    <span className='text-yellow-400 text-xs font-sans'>Get upto 30% Off</span>*/}
+                    {/*    <span className='text-white text-[9px]'>You can get value for money product</span>*/}
+                    {/*</div>*/}
                 </div>
-                <div className='text-white font-sans sm:w-2/3 p-5 flex flex-col space-y-6 items-start justify-center'>
-                    <div className='font-semibold text-2xl sm:text-4xl '>We Provide High Quality Footwear</div>
-                    <p className='text-sm sm:text-lg text-wrap '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci possimus temporibus neque officiis tempora quibusdam rem non repudiandae consequatur suscipit.</p>
-                    <button className='bg-[#c2db11] sm:w-[150px] rounded-md text-black font-mono hover:bg-[#c3d05a]'><div className='flex justify-between sm:justify-around p-2 sm:p-3 items-center'>Shop Now <FaArrowRightLong /></div></button>
+
+                <div className='text-white font-sans sm:w-2/3 my-5 lg:flex flex-col space-y-6 mx-auto justify-center'>
+                    <div className='font-semibold text-2xl sm:text-4xl text-center md:text-start '>We Provide High
+                        Quality Footwear
+                    </div>
+                    <p className='text-sm sm:text-lg text-wrap text-center md:text-start '>Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Adipisci possimus temporibus neque officiis tempora quibusdam rem
+                        non repudiandae consequatur suscipit.</p>
+                    <div className="text-center md:text-start">
+                        <button
+                            className='bg-[#c2db11] sm:w-[150px] rounded-md text-black font-mono hover:bg-[#c3d05a] text-center '>
+                            <div className='flex justify-between sm:justify-around p-2 sm:p-3 items-center'>Shop
+                                Now </div>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -76,7 +67,6 @@ const Home = () => {
                     ></iframe>
                 </div>
             </div> */}
-
 
 
         </div>

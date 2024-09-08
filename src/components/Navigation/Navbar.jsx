@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import gsap from 'gsap';
+import {useGSAP} from "@gsap/react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,6 @@ const Navbar = () => {
         } else {
             document.body.style.overflow = 'auto';
         }
-
         return () => {
             document.body.style.overflow = 'auto';
         };
@@ -25,8 +25,12 @@ const Navbar = () => {
 
     const menuRef = useRef(null);
 
+// Make sure the menu is hidden initially
+    useGSAP(() => {
+        gsap.set(menuRef.current, { x: '100%', autoAlpha: 0 });
+    }, []);
 
-    useEffect(() => {
+    useGSAP(() => {
         if (isOpen) {
             gsap.to(menuRef.current, { x: 0, duration: 0.5, ease: 'power3.out', autoAlpha: 1 });
         } else {
@@ -38,7 +42,7 @@ const Navbar = () => {
         }
     }, [isOpen]);
 
-    useEffect(() => {
+    useGSAP(() => {
         if (isOpen) {
             gsap.set(menuRef.current, { display: 'block' });
         }
@@ -46,7 +50,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='hidden lg:flex justify-between lg:fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-lg  py-4 items-center  px-5  '>
+            <div className='hidden lg:flex justify-between lg:fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-lg  py-4 items-center  px-5  '>
                 <div className='flex lg:space-x-10 justify-between lg:pl-7 items-center w-full lg:justify-start'>
                     <div className='logo '>
                         <img src={logo} className='w-16 h-14' alt="Logo" />
